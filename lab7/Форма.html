@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма замовлення товару</title>
+</head>
+<body>
+    <h1>Замовлення товару</h1>
+    <form action="submit_order.php" method="POST">
+        <!-- Поле вводу номера банківського рахунку -->
+        <label for="account-number">Номер банківського рахунку:</label>
+        <input type="text" id="account-number" name="account_number" required><br><br>
+
+        <!-- Поле вводу особистого номера користувача -->
+        <label for="user-id">Особистий номер користувача:</label>
+        <input type="text" id="user-id" name="user_id" required><br><br>
+
+        <!-- Список товарів -->
+        <label for="products">Оберіть товари:</label><br>
+        <select id="products" name="products[]" multiple required>
+            <option value="product1">Товар 1</option>
+            <option value="product2">Товар 2</option>
+            <option value="product3">Товар 3</option>
+            <option value="product4">Товар 4</option>
+        </select><br><br>
+
+        <!-- Поле вводу коментарів -->
+        <label for="comments">Коментарі:</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+        <!-- Вид оплати -->
+        <label>Вид оплати:</label><br>
+        <input type="radio" id="cash" name="payment_type" value="cash" required>
+        <label for="cash">Готівковий розрахунок</label><br>
+        <input type="radio" id="non-cash" name="payment_type" value="non-cash" required>
+        <label for="non-cash">Безготівковий розрахунок</label><br><br>
+
+        <!-- Додаткова інформація -->
+        <label>Додаткова інформація:</label><br>
+        <input type="checkbox" id="account-balance" name="additional_info[]" value="account_balance">
+        <label for="account-balance">Дані про залишки на рахунку</label><br>
+        <input type="checkbox" id="recent-payments" name="additional_info[]" value="recent_payments">
+        <label for="recent-payments">Список останніх виплат по рахунку</label><br><br>
+
+        <!-- Кнопка відправки -->
+        <button type="submit">Відправити замовлення</button>
+    </form>
+</body>
+</html>
