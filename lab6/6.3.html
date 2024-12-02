@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сенсорне зображення</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .map-container {
+      position: relative;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .map-container svg {
+      width: 100%;
+      height: auto;
+    }
+    .tooltip {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      display: none;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="map-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+      <!-- Область 1 -->
+      <path d="M100,100 L200,100 L200,200 L100,200 Z" fill="skyblue" 
+            data-tooltip="Це область 1" />
+      <!-- Область 2 -->
+      <circle cx="400" cy="300" r="50" fill="lightgreen" 
+              data-tooltip="Це область 2" />
+      <!-- Область 3 -->
+      <polygon points="600,100 700,100 650,200" fill="lightcoral" 
+               data-tooltip="Це область 3" />
+    </svg>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+
+  <script>
+    const tooltip = document.getElementById('tooltip');
+    const areas = document.querySelectorAll('svg [data-tooltip]');
+
+    areas.forEach(area => {
+      area.addEventListener('mousemove', (event) => {
+        tooltip.style.display = 'block';
+        tooltip.textContent = area.getAttribute('data-tooltip');
+        tooltip.style.left = event.pageX + 10 + 'px';
+        tooltip.style.top = event.pageY + 10 + 'px';
+      });
+
+      area.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>

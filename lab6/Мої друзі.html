@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мої друзі</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+        }
+
+        header {
+            background-color: #4682b4;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #87ceeb;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            margin-right: 10px;
+            border-radius: 5px;
+            background-color: #4682b4;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #5a9bd3;
+        }
+
+        .friend {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+
+        .friend img {
+            border-radius: 50%;
+            margin-right: 20px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .friend-info {
+            max-width: 600px;
+        }
+
+        .friend-info h3 {
+            margin: 0;
+        }
+
+        footer {
+            background-color: #4682b4;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Мої друзі</h1>
+    </header>
+
+    <nav>
+        <a href="#friend1" title="Дізнатися більше про Ростислава">Ростислав</a>
+        <a href="#friend2" title="Дізнатися більше про Олександра">Олександр</a>
+        <a href="#friend3" title="Дізнатися більше про Артема">Артем</a>
+        <a href="#friend4" title="Дізнатися більше про Віталія">Віталій</a>
+        <a href="#friend5" title="Дізнатися більше про Назара">Назар</a>
+    </nav>
+
+    <section id="friend1" class="friend">
+        <img src="Ростислав.jpg" alt="Ростислав">
+        <div class="friend-info">
+            <h3>Ростислав</h3>
+            <p>Ростислав навчаєтсья у Львові.</p>
+        </div>
+    </section>
+
+    <section id="friend2" class="friend">
+        <img src="Олександр.jpg" alt="Олександр">
+        <div class="friend-info">
+            <h3>Олександр</h3>
+            <p>Олександр навчається в Києві.</p>
+        </div>
+    </section>
+
+    <section id="friend3" class="friend">
+        <img src="Артем.jpg" alt="Артем">
+        <div class="friend-info">
+            <h3>Артем</h3>
+            <p>Артем навчається в Полтаві.</p>
+        </div>
+    </section>
+
+    <section id="friend4" class="friend">
+        <img src="Віталій.jpg" alt="Віталій">
+        <div class="friend-info">
+            <h3>Віталій</h3>
+            <p>Віталій ніде не навчається.</p>
+        </div>
+    </section>
+
+    <section id="friend5" class="friend">
+        <img src="Назар.jpg" alt="Назар">
+        <div class="friend-info">
+            <h3>Назар</h3>
+            <p>Назар навчається в Києві.</p>
+        </div>
+    </section>
+</body>
+</html>
