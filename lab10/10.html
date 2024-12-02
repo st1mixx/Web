@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Макет сторінки</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .wrapper {
+            display: grid;
+            gap: 3px;
+            width: 100%;
+            height: 100vh;
+            grid-template-areas:
+                "block1 block1 block1 block5"
+                "block2 block3 block4 block5"
+                "block6 block6 block6 block5";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        .block {
+            border: 1px solid #ddd;
+        }
+
+        .block-1 {
+            grid-area: block1;
+            background-color: #4a90e2;
+        }
+
+        .block-2 {
+            grid-area: block2;
+            background-color: #50e3c2;
+        }
+
+        .block-3 {
+            grid-area: block3;
+            background-color: #d0021b;
+        }
+
+        .block-4 {
+            grid-area: block4;
+            background-color: #f5a623;
+        }
+
+        .block-5 {
+            grid-area: block5;
+            background-color: #7ed321;
+        }
+
+        .block-6 {
+            grid-area: block6;
+            background-color: #d85a0c;
+        }
+
+        /* Адаптивність */
+        @media (max-width: 1200px) {
+            .wrapper {
+                grid-template-areas:
+                    "block1 block1 block1 block1"
+                    "block2 block3 block4 block4"
+                    "block5 block5 block6 block6";
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .wrapper {
+                grid-template-areas:
+                    "block1"
+                    "block2"
+                    "block3"
+                    "block4"
+                    "block5"
+                    "block6";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="block block-1"></div>
+        <div class="block block-2"></div>
+        <div class="block block-3"></div>
+        <div class="block block-4"></div>
+        <div class="block block-5"></div>
+        <div class="block block-6"></div>
+    </div>
+</body>
+</html>
