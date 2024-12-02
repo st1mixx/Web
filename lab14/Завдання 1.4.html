@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивна верстка</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas:
+                "left-header right-header"
+                "left-menu right-menu"
+                "left-menu content"
+                "left-footer right-footer";
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 10px;
+        }
+
+        .header-left {
+            grid-area: left-header;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .header-right {
+            grid-area: right-header;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .menu-left {
+            grid-area: left-menu;
+            background-color: #f9c4f9;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .content {
+            grid-area: content;
+            background-color: #ffffff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .menu-right {
+            grid-area: right-menu;
+            background-color: #f9c4f9;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .footer-left {
+            grid-area: left-footer;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .footer-right {
+            grid-area: right-footer;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Адаптив для екрану 767px і менше */
+        @media (max-width: 767px) {
+            .container {
+                grid-template-areas:
+                    "left-header"
+                    "right-header"
+                    "left-menu"
+                    "content"
+                    "right-menu"
+                    "left-footer"
+                    "right-footer";
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-left">Ліва частина шапки</div>
+        <div class="header-right">Права частина шапки</div>
+        <div class="menu-left">Ліве меню</div>
+        <div class="content">Контент</div>
+        <div class="menu-right">Праве меню</div>
+        <div class="footer-left">Ліва частина підвалу</div>
+        <div class="footer-right">Права частина підвалу</div>
+    </div>
+</body>
+</html>
