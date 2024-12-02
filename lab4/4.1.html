@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chirkov Sviatoslav</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .line {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .line1 {
+            background-color: lightblue;
+        }
+
+        .line2 {
+            background-color: lightgreen;
+        }
+
+        .line3 {
+            background-color: lightcoral;
+        }
+
+        .line4 {
+            background-color: lightgoldenrodyellow;
+        }
+
+        .line5 {
+            background-color: lightpink;
+        }
+
+        .marquee {
+            position: absolute;
+            animation: move infinite linear;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(calc(100vw - 100%));
+            }
+        }
+
+        @keyframes loop-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes stop-right {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(calc(100vw - 100%));
+            }
+        }
+
+        @keyframes delay1 {
+            0% {
+                transform: translateX(100%);
+            }
+            20% {
+                transform: translateX(90%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes delay2 {
+            0% {
+                transform: translateX(100%);
+            }
+            50% {
+                transform: translateX(70%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .line1 .marquee {
+            animation: bounce 5s infinite ease-in-out;
+        }
+
+        .line2 .marquee {
+            animation: loop-left 7s infinite linear;
+        }
+
+        .line3 .marquee {
+            animation: stop-right 5s forwards linear;
+        }
+
+        .line4 .marquee {
+            animation: delay1 8s infinite linear;
+        }
+
+        .line5 .marquee {
+            animation: delay2 10s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <div class="line line1">
+        <div class="marquee">Текст коливається з боку в бік</div>
+    </div>
+    <div class="line line2">
+        <div class="marquee">Текст пробігає справа наліво та з’являється знову</div>
+    </div>
+    <div class="line line3">
+        <div class="marquee">Текст пробігає зліва направо та зупиняється</div>
+    </div>
+    <div class="line line4">
+        <div class="marquee">Текст з різним режимом запізнення (1)</div>
+    </div>
+    <div class="line line5">
+        <div class="marquee">Текст з різним режимом запізнення (2)</div>
+    </div>
+</body>
+</html>
